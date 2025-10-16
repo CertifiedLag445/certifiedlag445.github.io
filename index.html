@@ -87,6 +87,10 @@
   .content{padding:0 20px 16px 34px; color:var(--muted)}
   .content li{margin:8px 0}
 
+  #placements figure{margin:0; background:linear-gradient(180deg,var(--panel),var(--panel2)); border:1px solid var(--border); border-radius:14px; overflow:hidden}
+  #placements img{display:block; width:100%; height:auto}
+  #placements figcaption{padding:10px 12px; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border)}
+
   
   :target{scroll-margin-top:74px}
 </style>
@@ -98,6 +102,7 @@
       <div class="links">
         <a href="#teams" id="lnk-teams">Teams</a>
         <a href="#strategies" id="lnk-strats" title="Jump to the strategies area">Strategies</a>
+        <a href="#placements" id="lnk-placements" title="Jump to the placements gallery">Placements</a>
       </div>
     </nav>
   </header>
@@ -187,6 +192,21 @@
             </ul>
           </div>
         </details>
+
+        <!-- Placements -->
+        <section id="placements">
+          <h2>Placements</h2>
+            <div class="grid" id="placementGrid">
+          <figure>
+            <img src="placements/0fb52857-d14e-4ff7-8437-c2a208ab5794.png" alt="Placement layout – image 1" />
+          <figcaption>Placement Layout — Image 1</figcaption>
+        </figure>
+      <figure>
+          <img src="placements/1503217553_16277809958_1760652559054.png" alt="Placement layout – image 2" />
+            <figcaption>Placement Layout — Image 2</figcaption>
+          </figure>
+        </div>
+      </section>
       </div>
     </section>
   </main>
