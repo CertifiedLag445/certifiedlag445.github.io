@@ -91,6 +91,7 @@
   #placements img{display:block; width:100%; height:auto}
   #placements figcaption{padding:10px 12px; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border)}
 
+
   
   :target{scroll-margin-top:74px}
 </style>
@@ -192,21 +193,21 @@
             </ul>
           </div>
         </details>
+        </section>
 
         <!-- Placements -->
         <section id="placements">
           <h2>Placements</h2>
             <div class="grid" id="placementGrid">
           <figure>
-            <img src="placements/0fb52857-d14e-4ff7-8437-c2a208ab5794.png" alt="Placement layout – image 1" />
-          <figcaption>Placement Layout — Image 1</figcaption>
+            <img src="Placements/1503217553_16277809958_1760651688733.png" alt="Placement Layout Front" />
+          <figcaption>Placement Layout Front</figcaption>
         </figure>
       <figure>
-          <img src="placements/1503217553_16277809958_1760652559054.png" alt="Placement layout – image 2" />
-            <figcaption>Placement Layout — Image 2</figcaption>
+          <img src="Placements/1503217553_16277809958_1760652559054.png" alt="Placement Layout Back" />
+            <figcaption>Placement Layout Back</figcaption>
           </figure>
         </div>
-      </section>
       </div>
     </section>
   </main>
@@ -253,7 +254,8 @@
   
   const sections = [
     {id:'#teams', link:'#lnk-teams'},
-    {id:'#strategies', link:'#lnk-strats'}
+    {id:'#strategies', link:'#lnk-strats'},
+    {id:'#placements', link:'#lnk-placements'}
   ];
   const opts = {rootMargin:'-50% 0px -45% 0px', threshold:[0,1]};
   const io = new IntersectionObserver(entries=>{
@@ -268,6 +270,8 @@
     const el = document.querySelector(s.id);
     if (el) io.observe(el);
   });
+
+
 </script>
 </body>
 </html>
