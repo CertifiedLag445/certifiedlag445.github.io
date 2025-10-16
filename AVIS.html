@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teams & Strategies</title>
+<style>
+  :root{
+    --bg:#0f1220;
+    --panel:#171a2b;
+    --panel2:#1e2340;
+    --text:#e8ecff;
+    --muted:#b9c0ffcc;
+    --accent:#7aa2ff;
+    --accent-2:#67e8f9;
+    --border:#2b315a;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+    background: linear-gradient(180deg, var(--bg), #0b0e1b 65%, #070a16 100%);
+    color:var(--text);
+    line-height:1.45;
+    scroll-behavior:smooth;
+  }
+
+  
+  header{
+    position:sticky; top:0; z-index:1000;
+    transition: transform .35s ease, box-shadow .25s ease, background-color .25s ease, height .25s ease;
+    background:#0f1220cc;
+    backdrop-filter:saturate(120%) blur(8px);
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{ box-shadow: 0 8px 24px #00000055; border-bottom-color: var(--border); }
+  header.hide{ transform: translateY(-100%); }
+  .nav{
+    max-width:1100px; margin:auto; padding:16px 18px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .brand{font-weight:800; letter-spacing:.3px; cursor:pointer}
+  .brand b{color:var(--accent)}
+  .links{display:flex; gap:8px; align-items:center}
+  .links a{
+    color:var(--text); text-decoration:none; padding:10px 12px; border-radius:10px;
+    transition: background .2s ease, color .2s ease;
+  }
+  .links a:hover{background:var(--panel); color:var(--accent-2)}
+  .links a.active{background:var(--panel2); color:var(--accent);}
+
+  
+  main{max-width:1100px; margin:28px auto 80px; padding:0 18px}
+  section{margin:28px 0 0}
+  h2{margin:6px 0 14px; font-size:1.6rem; letter-spacing:.2px}
+
+  
+  .grid{
+    display:grid; gap:16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  }
+  .card{
+    background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border:1px solid var(--border);
+    border-radius:16px; padding:16px 16px 12px;
+    box-shadow: 0 8px 24px #00000033 inset, 0 10px 24px #0b0f1a7a;
+  }
+  .card h3{margin:2px 2px 10px; font-size:1.1rem}
+
+  .members{margin:0; padding:0 0 0 18px}
+  .members li{margin:6px 0}
+
+  
+  #strategies .panel{
+    border:1px solid var(--border);
+    border-radius:14px; overflow:hidden; background:var(--panel);
+  }
+  details{background:linear-gradient(180deg,var(--panel2),var(--panel));}
+  details + details{border-top:1px solid var(--border)}
+  summary{
+    cursor:pointer; list-style:none; padding:14px 16px;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  summary::-webkit-details-marker{display:none}
+  .wave-title{font-weight:800}
+  .tag{font-size:.8rem; padding:2px 8px; border-radius:999px; border:1px solid var(--border); color:var(--muted)}
+  .content{padding:0 20px 16px 34px; color:var(--muted)}
+  .content li{margin:8px 0}
+
+  
+  :target{scroll-margin-top:74px}
+</style>
+</head>
+<body>
+  <header id="hdr">
+    <nav class="nav">
+      <div class="brand" id="brand">Raid <b>Planner</b></div>
+      <div class="links">
+        <a href="#teams" id="lnk-teams">Teams</a>
+        <a href="#strategies" id="lnk-strats" title="Jump to the strategies area">Strategies</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="teams">
+      <h2>Teams</h2>
+      <div class="grid" id="teamGrid"></div>
+    </section>
+
+    <section id="strategies">
+      <h2>Strategies (Martial)</h2>
+      <div class="panel">
+        <!-- Wave 160 -->
+        <details open>
+          <summary>
+            <span class="wave-title">Wave 160 Boss</span>
+            <span class="tag">Super Buu</span>
+          </summary>
+          <div class="content">
+            <ul>
+              <li>Sakuya first</li>
+              <li>Esdeath second</li>
+              <li>Diavolo after traps</li>
+              <li>Sakuya</li>
+              <li>Pull</li>
+              <li>Esdeath</li>
+              <li>One person turn off auto-skip (~163)</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Wave 170 -->
+        <details>
+          <summary>
+            <span class="wave-title">Wave 170 Boss</span>
+            <span class="tag">Super Buu</span>
+          </summary>
+          <div class="content">
+            <ul>
+              <li>Prep Monarch Cid starting wave 168</li>
+              <li>Some enemies hitting traps is normal</li>
+              <li>Try to save Esdeath <em>or</em> Sakuya for instant timestamp on boss</li>
+              <li>Change Gilga to hit leaks and early execute</li>
+              <li>Sukuna + Gilga + TS when boss spawns</li>
+              <li>After first timestamp use Diavolo</li>
+              <li>Broly active on 171 (ASAP)</li>
+              <li>Let boss run through traps, replace stuns and slows then nuke on wave 172–173</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Wave 180 -->
+        <details>
+          <summary>
+            <span class="wave-title">Wave 180 Boss</span>
+            <span class="tag">Evil Buu</span>
+          </summary>
+          <div class="content">
+            <ul>
+              <li>Must have good timestamp comms</li>
+              <li>Move dragon slayer to a Goblin Slayer for 173–179 (leaks get bad)</li>
+              <li>Prep Eth Cid nuke 177 + dragon slayer 179</li>
+              <li>"Vincent turn up your mic bro"</li>
+              <li>Turn on wave skip at 178</li>
+              <li>When boss spawns normal stall + Sukuna and Gilga</li>
+              <li>If can’t, Diavolo Pull instead</li>
+              <li>Nuke around 184 or when boss passes weird track bend</li>
+              <li>Turn off wave skip</li>
+              <li>Diavolo 188, if Byeken tension back, turn on auto-skip</li>
+              <li>Move Gilga further back for better execute range</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Wave 190 -->
+        <details>
+          <summary>
+            <span class="wave-title">Wave 190 Boss</span>
+            <span class="tag">Fat Buu</span>
+          </summary>
+          <div class="content">
+            <ul>
+              <li>When boss spawns, turn on auto skip if we haven’t already</li>
+              <li>Nuke before mobs end run, we won’t be able to kill boss with full stall now</li>
+              <li>Use ping method during last stall</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+<script>
+  
+  const teams = [
+    { name: "Rim", members: ["Broly","Diavolo","Goblin Slayer","Subaru","Smith","Sakuya"] },
+    { name: "(Vincent/Gibby)", members: ["Goblin Slayer","Broly","Esdeath","Al","Gilgamesh","Hercule"] },
+    { name: "(Pluckk)", members: ["Broly","Astolfo","Byeken","Goblin Slayer","Stark","Cid"] },
+    { name: "(Certified/Gibby)", members: ["Goblin Slayer","Cid","Sukuna","Alucard","Broly","Griffith"] },
+  ];
+
+  const grid = document.getElementById('teamGrid');
+  teams.forEach(t => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <h3>${t.name}</h3>
+      <ol class="members">
+        ${t.members.map(m => `<li>${m}</li>`).join('')}
+      </ol>
+    `;
+    grid.appendChild(card);
+  });
+
+  
+  const header = document.getElementById('hdr');
+  const brand = document.getElementById('brand');
+  let lastY = window.scrollY;
+
+  
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 8);
+    if (y > lastY && y > 80) header.classList.add('hide');
+    else header.classList.remove('hide');
+    lastY = y;
+  }, {passive:true});
+
+  
+  brand.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  
+  const sections = [
+    {id:'#teams', link:'#lnk-teams'},
+    {id:'#strategies', link:'#lnk-strats'}
+  ];
+  const opts = {rootMargin:'-50% 0px -45% 0px', threshold:[0,1]};
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      const sec = sections.find(s => s.id === '#'+e.target.id);
+      if(!sec) return;
+      const a = document.querySelector(sec.link);
+      if(e.isIntersecting){ document.querySelectorAll('.links a').forEach(x=>x.classList.remove('active')); a.classList.add('active'); }
+    });
+  }, opts);
+  sections.forEach(s => {
+    const el = document.querySelector(s.id);
+    if (el) io.observe(el);
+  });
+</script>
+</body>
+</html>
