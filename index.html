@@ -91,11 +91,26 @@
   #placements img{display:block; width:100%; height:auto}
   #placements figcaption{padding:10px 12px; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border)}
 
+  .zoomable{cursor:zoom-in}
+  #lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.65);backdrop-filter:saturate(120%) blur(2px);z-index:2000;padding:2vh}
+  #lightbox[hidden]{display:none}
+  #lightbox img{max-width:96vw;max-height:92vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  #lightbox button{position:absolute;border:1px solid #2b315a;background:#1e2340;color:#e8ecff;border-radius:10px;padding:8px 12px;cursor:pointer}
+  #lightbox .lb-close{top:16px;right:16px}
+  #lightbox .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+  #lightbox .lb-next{right:16px;top:50%;transform:translateY(-50%)}
+
 
   
   :target{scroll-margin-top:74px}
 </style>
 </head>
+<div id="lightbox" hidden>
+  <button class="lb-close" type="button">×</button>
+  <button class="lb-prev" type="button">‹</button>
+  <img id="lightboxImg" alt="">
+  <button class="lb-next" type="button">›</button>
+</div>
 <body>
   <header id="hdr">
     <nav class="nav">
@@ -270,6 +285,26 @@
     const el = document.querySelector(s.id);
     if (el) io.observe(el);
   });
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const btnClose = lb.querySelector('.lb-close');
+  const btnPrev = lb.querySelector('.lb-prev');
+  const btnNext = lb.querySelector('.lb-next');
+  const thumbs = Array.from(document.querySelectorAll('#placementGrid img'));
+  thumbs.forEach(t=>t.classList.add('zoomable'));
+  let idx = -1;
+  function openLB(i){ idx=i; lbImg.src=thumbs[idx].src; lb.removeAttribute('hidden'); }
+  function closeLB(){ lb.setAttribute('hidden',''); lbImg.removeAttribute('src'); }
+  function prevLB(){ if(!thumbs.length) return; idx=(idx-1+thumbs.length)%thumbs.length; lbImg.src=thumbs[idx].src; }
+  function nextLB(){ if(!thumbs.length) return; idx=(idx+1)%thumbs.length; lbImg.src=thumbs[idx].src; }
+  thumbs.forEach((t,i)=>t.addEventListener('click',()=>openLB(i)));
+  btnClose.addEventListener('click',closeLB);
+  btnPrev.addEventListener('click',prevLB);
+  btnNext.addEventListener('click',nextLB);
+  lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
+  document.addEventListener('keydown',e=>{ if(lb.hasAttribute('hidden')) return; if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') prevLB(); if(e.key==='ArrowRight') nextLB(); });
+
 
 
 </script>
