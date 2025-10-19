@@ -100,6 +100,10 @@
   #lightbox .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
   #lightbox .lb-next{right:16px;top:50%;transform:translateY(-50%)}
 
+  .note-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;background:linear-gradient(180deg,var(--panel2),var(--panel));border-top:1px solid var(--border)}
+  .note-row .wave-title{font-weight:800}
+
+
 
   
   :target{scroll-margin-top:74px}
@@ -132,6 +136,12 @@
     <section id="strategies">
       <h2>Strategies (Martial)</h2>
       <div class="panel">
+
+        <div class="note-row">
+          <span class="wave-title">MAKE SURE RIM DOESN'T PLACE BROLY</span>
+          <span class="tag">Broly</span>
+        </div>
+
         <!-- Wave 160 -->
         <details open>
           <summary>
@@ -305,11 +315,13 @@
   lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
   document.addEventListener('keydown',e=>{ if(lb.hasAttribute('hidden')) return; if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') prevLB(); if(e.key==='ArrowRight') nextLB(); });
 
+  document.querySelectorAll('#strategies details[open]').forEach(d=>d.removeAttribute('open'));
 
 
 </script>
 </body>
 </html>
+
 
 
 
